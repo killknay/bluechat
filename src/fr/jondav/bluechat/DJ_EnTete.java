@@ -41,13 +41,13 @@ public class DJ_EnTete {
 	 * @param contentType Le content-type de la suite du message
 	 */
 	public DJ_EnTete(String envoyeur, String envoyeurEthernet, String recepteur, String recepteurEthernet, String requete, String contentType) {
-	    this.envoyeur = envoyeur;
-	    this.envoyeurEthernet = envoyeurEthernet;
-	    this.recepteur = recepteur;
-	    this.recepteurEthernet = recepteurEthernet;
-	    this.requete = requete;
-	    this.contentType = contentType;
-    }
+		this.envoyeur = envoyeur;
+		this.envoyeurEthernet = envoyeurEthernet;
+		this.recepteur = recepteur;
+		this.recepteurEthernet = recepteurEthernet;
+		this.requete = requete;
+		this.contentType = contentType;
+	}
 
 	/**
 	 * Permet de renvoyer l'objet sous forme de texte
