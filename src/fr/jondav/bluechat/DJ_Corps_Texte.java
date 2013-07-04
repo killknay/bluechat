@@ -53,9 +53,9 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	 * @return La chaine de caractère correspondant au corps de la requête
 	 */
 	@Override
-    public String toProtocol() {
-	    return texte;
-    }
+	public String toProtocol() {
+		return texte;
+	}
 
 	/**
 	 * Permet de savoir si deux objet de la classe DJ_Corps
@@ -65,12 +65,12 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	 * @return True si les objets sont les mêmes, false sinon.
 	 */
 	@Override
-    public boolean equals(DJ_Corps c) {
+	public boolean equals(DJ_Corps c) {
 		if (contentType == c.getContentType() && toProtocol() == c.toProtocol())
 			return true;
 		else
 			return false;
-    }
+	}
 
 	/**
 	 * Permet de récupère le type du corps.
@@ -80,9 +80,9 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	 * @return Le type du corps, à inscrire dans l'en-tête de requête.
 	 */
 	@Override
-    public String getContentType() {
+	public String getContentType() {
 	    return contentType;
-    }
+	}
 	
 	/**
 	 * Permet à l'objet de s'afficher dans une chaine de 
