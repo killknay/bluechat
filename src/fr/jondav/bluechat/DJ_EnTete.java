@@ -105,8 +105,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer le nom de l'envoyer du message.
 	 * 
-     * @return Le nom de l'envoyeur du message.
-     */
+	 * @return Le nom de l'envoyeur du message.
+	 */
     public String getEnvoyeur() {
     	return envoyeur;
     }
@@ -114,8 +114,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir le nom de l'envoyeur du message.
 	 * 
-     * @param envoyeur La valeur que souhaitez définir pour l'envoyeur
-     */
+	 * @param envoyeur La valeur que souhaitez définir pour l'envoyeur
+	 */
     public void setEnvoyeur(String envoyeur) {
     	if (envoyeur != null)
     		this.envoyeur = envoyeur;
@@ -124,8 +124,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer l'adresse ethernet de l'envoyeur.
 	 * 
-     * @return L'adresse ethernet de l'envoyeur.
-     */
+	 * @return L'adresse ethernet de l'envoyeur.
+	 */
     public String getEnvoyeurEthernet() {
     	return envoyeurEthernet;
     }
@@ -133,8 +133,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir l'addresse ethernet de l'envoyeur.
 	 * 
-     * @param envoyeurEthernet La valeur que souhaitez définir pour l'addresse ethernet de l'envoyeur
-     */
+	 * @param envoyeurEthernet La valeur que souhaitez définir pour l'addresse ethernet de l'envoyeur
+	 */
     public void setEnvoyeurEthernet(String envoyeurEthernet) {
     	if (envoyeur != null)
     		this.envoyeurEthernet = envoyeurEthernet;
@@ -143,8 +143,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer le nom du recepteur du message.
 	 * 
-     * @return Le nom du recepteur du message.
-     */
+	 * @return Le nom du recepteur du message.
+	 */
     public String getRecepteur() {
     	return recepteur;
     }
@@ -152,8 +152,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir le nom du recepteur du message.
 	 * 
-     * @param recepteur La valeur que vous voulez donner au nom du recepteur.
-     */
+	 * @param recepteur La valeur que vous voulez donner au nom du recepteur.
+	 */
     public void setRecepteur(String recepteur) {
     	if (envoyeur != null)
     		this.recepteur = recepteur;
@@ -162,7 +162,7 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer l'adresse ethernet du recepteur du message.
 	 * 
-     * @return L'adresse ethernet du recepteur du message.
+	 * @return L'adresse ethernet du recepteur du message.
      */
     public String getRecepteurEthernet() {
     	return recepteurEthernet;
@@ -171,8 +171,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir l'adresse ethernet du recepteur du message.
 	 * 
-     * @param recepteurEthernet L'adresse ethernet à définir.
-     */
+	 * @param recepteurEthernet L'adresse ethernet à définir.
+	 */
     public void setRecepteurEthernet(String recepteurEthernet) {
     	if (envoyeur != null)
     		this.recepteurEthernet = recepteurEthernet;
@@ -181,8 +181,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer la requête du message.
 	 * 
-     * @return La requête du message.
-     */
+	 * @return La requête du message.
+	 */
     public String getRequete() {
     	return requete;
     }
@@ -190,8 +190,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir la requête de l'en-tête (cf Google Drive).
 	 * 
-     * @param requete La valeur de la requête que vous souhaitez définir.
-     */
+	 * @param requete La valeur de la requête que vous souhaitez définir.
+	 */
     public void setRequete(String requete) {
     	if (envoyeur != null)
     		this.requete = requete;
@@ -200,8 +200,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer le content-type du message.
 	 * 
-     * @return Le content-type du message.
-     */
+	 * @return Le content-type du message.
+	 */
     public String getContentType() {
     	return contentType;
     }
@@ -209,8 +209,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de définir le content-type du message.
 	 * 
-     * @param contentType Le content-type que vous souhaitez utiliser.
-     */
+	 * @param contentType Le content-type que vous souhaitez utiliser.
+	 */
     public void setContentType(String contentType) {
     	if (envoyeur != null)
     		this.contentType = contentType;
@@ -219,8 +219,8 @@ public class DJ_EnTete {
 	/**
 	 * Permet de récupérer la première ligne du protocole.
 	 * 
-     * @return La première ligne du protocole.
-     */
+	 * @return La première ligne du protocole.
+	 */
     public String getPremiereLigne() {
     	return premiereLigne;
     }
