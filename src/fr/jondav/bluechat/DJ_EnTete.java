@@ -11,16 +11,17 @@ package fr.jondav.bluechat;
  *  Request:req \n
  *  Content-Type:text\n
  *  
- * Pour plus d'information voir Google Drive.
+ * Pour plus d'informations voir Google Drive.
  */
 public class DJ_EnTete {
-	private final String premiereLigne = "DJB 1.00";   //< Correspond à la première ligne du protocole
-	private String envoyeur;                           //< Le nom de celui qui envoie le message
-	private String envoyeurEthernet;                   //< L'adresse ethernet de celui qui envoie le message
-	private String recepteur;                          //< Le nom du recepteur du message
-	private String recepteurEthernet;                  //< L'adresse ethernet du recepteur du message
-	private String requete;                            //< La requete à envoyer (cf Google Drive)
-	private String contentType;                        //< Le content-type de la suite du message
+	public static final int nombreLignes = 5;                 //< Le nombre de ligne de l'en-tête
+	private static final String premiereLigne = "DJB 1.00";   //< Correspond à la première ligne du protocole
+	private String envoyeur;                                  //< Le nom de celui qui envoie le message
+	private String envoyeurEthernet;                          //< L'adresse ethernet de celui qui envoie le message
+	private String recepteur;                                 //< Le nom du recepteur du message
+	private String recepteurEthernet;                         //< L'adresse ethernet du recepteur du message
+	private String requete;                                   //< La requete à envoyer (cf Google Drive)
+	private String contentType;                               //< Le content-type de la suite du message
 
 	/**
 	 * Constructeur par défaut de la classe.
@@ -96,9 +97,51 @@ public class DJ_EnTete {
 	 * @param trame La trame (complete) a partir de laquelle vous souhaitez charger l'objet.
 	 * @return L'objet créer si tout s'est bien passé, null sinon.
 	 */
-	public DJ_EnTete chargerDepuisTrame (String trame) {
+	public static DJ_EnTete chargerDepuisTrame (String trame) {
 		DJ_EnTete e = new DJ_EnTete();
-		// TODO A compléter.
+		
+		if(trame == null)
+			return null;
+		
+		String[] lignes = trame.split("\n"); // On split toutes les lignes
+		
+		if (!(lignes[0].equals(premiereLigne))) // On regarde si la premiere ligne correspond
+			return null;
+		
+		//! Partie envoyeur
+		String[] sender = lignes[1].split("From:");
+		if (sender.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		
+		String[] detailSender = sender[1].split("\\|!\\|");
+		if (detailSender.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		e.setEnvoyeur(detailSender[0]);
+		e.setEnvoyeurEthernet(detailSender[1]);
+		
+		//! Partie recepteur
+		String[] receiver = lignes[2].split("To:");
+		if (receiver.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		
+		String[] detailReceiver = receiver[1].split("\\|!\\|");
+		if (detailReceiver.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		e.setRecepteur(detailReceiver[0]);
+		e.setRecepteurEthernet(detailReceiver[1]);
+		
+		//! Partie requête
+		String[] requete = lignes[3].split("Request:");
+		if (receiver.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		e.setRequete(requete[1]);
+		
+		//! Partie content-type
+		String[] content = lignes[4].split("Content-Type:");
+		if (receiver.length != 2) //< Si le split ne créé pas deux éléments s'est pas bon
+			return null;
+		e.setContentType(content[1]);
+		
 		return e;
 	}
 	

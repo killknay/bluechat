@@ -10,16 +10,25 @@ package fr.jondav.bluechat;
  *  - Valeur : Du texte String
  */
 public class DJ_Corps_Texte implements DJ_Corps{
-	private String texte;        //< Correspond au texte contenue
-	private String contentType;  //< Correspond au type des données
+	private String texte;                                //< Correspond au texte contenue
+	private static final String contentType = "texte";   //< Correspond au type des données
 	
 	/**
-	 * Constructeur par défaut de la classe. 
-	 * Initialise le contentType avec la bonne valeur.
+	 * Constructeur par défaut de la classe.
+	 * Permet de définir le texte directement.
+	 * 
+	 *  @param texte Le texte que vous souhaitez définir.
+	 */
+	public DJ_Corps_Texte(String texte) {
+		this.texte = texte;
+	}
+	
+	/**
+	 * Constructeur par défaut de la classe.
+	 * Met le texte à vide. 
 	 */
 	public DJ_Corps_Texte() {
-		contentType = "texte";
-		texte = "";
+		this("");
 	}
 	
 	/**
@@ -29,9 +38,23 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	 * @param trame La trame (complete) a partir de laquelle vous souhaitez charger l'objet.
 	 * @return L'objet créer si tout s'est bien passé, null sinon.
 	 */
-	public DJ_Corps_Texte chargerDepuisTrame (String trame) {
+	public static DJ_Corps_Texte chargerDepuisTrame (String trame) {
 		DJ_Corps_Texte c = new DJ_Corps_Texte();
-		// TODO A compléter
+		
+		if (trame == null)
+			return null;
+		
+		String[] lignes = trame.split("\n"); 
+		if (lignes.length < DJ_EnTete.nombreLignes) //< Si on a moins de lignes que le nombre minimal de l'en-tête ça va pas
+			return null;
+		
+		for (int i = DJ_EnTete.nombreLignes; i < lignes.length ; i++) { //< On récupère toutes les lignes
+			if (i == DJ_EnTete.nombreLignes) //< Pour éviter un \n de trop
+				c.setTexte(lignes [i]);
+			else
+				c.setTexte(c.getTexte() + "\n" + lignes [i]);
+		}
+		
 		return c;
 	}
 	
@@ -73,7 +96,7 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	}
 
 	/**
-	 * Permet de récupère le type du corps.
+	 * Permet de récupèrer le type du corps.
 	 * Cette information est nécessaire dans le header de requête bluetooth.
 	 * Ici renvoie toujours "texte";
 	 * 
@@ -82,6 +105,15 @@ public class DJ_Corps_Texte implements DJ_Corps{
 	@Override
 	public String getContentType() {
 	    return contentType;
+	}
+	
+	/**
+	 * Permet de récupèrer le texte du corps.
+	 * 
+	 * @return Le texte du message.
+	 */
+	public String getTexte() {
+	    return texte;
 	}
 	
 	/**
