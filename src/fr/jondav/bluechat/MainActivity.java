@@ -19,7 +19,11 @@ public class MainActivity extends Activity {
 
 		
 		layoutGlobal = (LinearLayout) RelativeLayout.inflate(this, R.layout.activity_main, null);
-
+		
+		/**
+		 * Permet de gerer le click du bouton pour quitter 
+		 * l'application
+		 */
 		final Button BtQuitter = (Button) layoutGlobal.findViewById(R.id.bt_Quitter);
 		BtQuitter.setOnClickListener(new OnClickListener() {
 			@Override

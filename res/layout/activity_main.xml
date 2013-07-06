@@ -3,7 +3,7 @@
  android:orientation="vertical"
  android:layout_width="fill_parent"
  android:layout_height="fill_parent"
- android:background="#FFFFFF"
+ android:background="#9a9595"
  >
  	<LinearLayout
 		 android:orientation="vertical"
@@ -11,43 +11,59 @@
 		 android:layout_height="wrap_content"
 		 android:layout_gravity="center|center"
 		 android:layout_weight="20"
-		 android:gravity="center">
+		 android:gravity="center"
+		 android:background="#9a9595">
 	 	<TextView
 	 	     android:layout_width="fill_parent"
 	         android:layout_height="wrap_content"
 			 android:text="Nom"
 			 android:gravity="center"
 			 android:textSize="23sp"
-			 android:textColor="#27a406"
+			 android:textColor="#2d5ed4"
 			 />
 		<EditText
 			 android:layout_width="fill_parent"
-			 android:layout_height="wrap_content"/>
+			 android:layout_height="wrap_content"
+			 android:layout_margin="10dp"
+			 android:padding="10dp"
+			 android:background="@layout/edittext"/>
 	</LinearLayout>
 	
 	<LinearLayout
-		 android:orientation="horizontal"
+		 android:orientation="vertical"
 		 android:layout_width="fill_parent"
 		 android:layout_height="wrap_content"
-		 android:layout_weight="1">
+		 android:layout_weight="1"
+		 android:background="#9a9595">
 		 <Button
 		     android:id="@+id/bt_Connexion"
 			 android:layout_width="fill_parent"
 			 android:layout_height="wrap_content"
 			 android:text="Connexion"
 			 android:background="@layout/background_bt"
-			 android:layout_weight="1"
 			 android:padding="10px"
-			 android:layout_marginLeft="10px"/>
+			 android:layout_weight="1"
+			 android:layout_margin="5px"
+			 android:textColor="#FFFFFF"/>
+		 <Button
+		     android:id="@+id/bt_Bluetooth"
+			 android:layout_width="fill_parent"
+			 android:layout_height="wrap_content"
+			 android:text="Bluetooth"
+			 android:background="@layout/background_bt"
+			 android:padding="10px"
+			 android:layout_weight="1"
+			 android:layout_margin="5px"
+			 android:textColor="#FFFFFF"/>
 		  <Button
 		     android:id="@+id/bt_Quitter"
 			 android:layout_width="fill_parent"
 			 android:layout_height="wrap_content"
 			 android:text="Quitter"
-			 android:background="@layout/background_bt"
+			 android:background="@layout/background_btquitter"
 			 android:layout_weight="1"
-			 android:layout_marginLeft="10px"
-			 android:layout_marginRight="10px"
-			 android:padding="10px"/>
+			 android:padding="10px"
+			 android:layout_margin="5px"
+			 android:textColor="#FFFFFF"/>
 	</LinearLayout>
 </LinearLayout>
