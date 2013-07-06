@@ -1,14 +1,14 @@
 package fr.jondav.bluechat;
 
+
 import android.os.Bundle;
 import android.app.Activity;
-import android.graphics.Typeface;
 import android.view.Menu;
 import android.view.View;
 import android.view.View.OnClickListener;
 import android.widget.Button;
 import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.RelativeLayout;
 
 public class MainActivity extends Activity {
 	LinearLayout layoutGlobal = null;    //< Le layout global de l'activité
@@ -16,7 +16,10 @@ public class MainActivity extends Activity {
 	@Override
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
+
 		
+		layoutGlobal = (LinearLayout) RelativeLayout.inflate(this, R.layout.activity_main, null);
+
 		final Button BtQuitter = (Button) layoutGlobal.findViewById(R.id.bt_Quitter);
 		BtQuitter.setOnClickListener(new OnClickListener() {
 			@Override
@@ -25,8 +28,7 @@ public class MainActivity extends Activity {
 				finish();
 			} 
 		});
-		
-		setContentView(R.layout.activity_main);
+		setContentView(layoutGlobal);
 	}
 
 	@Override
