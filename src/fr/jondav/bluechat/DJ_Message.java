@@ -16,7 +16,7 @@ package fr.jondav.bluechat;
  *  
  * Pour plus d'informations voir Google Drive.
  */
-public class DJ_Message {
+public class DJ_Message implements DJ_Protocole {
 	public static final String CONNECT = "connect";                 //< Message de demande de connexion
 	public static final String CONNECT_REP = "connect-rep";         //< Message de reponse de connexion
 	public static final String CHECKONLINE = "checkonline";         //< Message de vérification si personne est en ligne
