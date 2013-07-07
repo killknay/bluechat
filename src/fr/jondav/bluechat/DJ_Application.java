@@ -12,5 +12,5 @@ public abstract class DJ_Application {
 	public static final String Auteurs = "David ANSILLON & Jonathan PAYEN";
 	public static final double Version = 0.01;
 	
-	public static final String EasterEgg1 = "May the force be with you...";
+	public static final String EasterEgg1 = "May the force be with you....";
 }
